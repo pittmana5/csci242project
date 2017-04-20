@@ -1,0 +1,8 @@
+csci242_news:
+    resource: "@CSCI242NewsBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
