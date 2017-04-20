@@ -17,7 +17,7 @@ class DefaultController extends Controller
     /**
      * Lists all category entities.
      *
-     * @Route("/", name="admin_category_index")
+     * @Route("/category", name="category_index")
      * @Method("GET")
      */
     public function categoryIndexAction()
