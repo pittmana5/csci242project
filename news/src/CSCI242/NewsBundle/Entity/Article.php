@@ -180,6 +180,9 @@ class Article
     public function getUpdatedAt(){
         return $this->updatedAt;
     }
-
+    public function __toString() 
+    {
+        return $this->title;
+    }
 
 }
