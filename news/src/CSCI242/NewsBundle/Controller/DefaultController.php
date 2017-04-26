@@ -14,4 +14,20 @@ class DefaultController extends Controller
     {
         return $this->render('CSCI242NewsBundle:Default:index.html.twig');
     }
+    /**
+     * Lists all category entities.
+     *
+     * @Route("/category", name="category_index")
+     * 
+     */
+    public function categoryIndexAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $categories = $em->getRepository('CSCI242NewsBundle:Category')->findAll();
+
+        return $this->render('category/index.html.twig', array(
+            'categories' => $categories,
+        ));
+    }
 }
