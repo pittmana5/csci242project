@@ -6,24 +6,26 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
-Article
+ * Article
+ * 
  * @ORM\Table(name="article")
- * @ORM\Entity(repositoryClass="CSCI242\NewsBundle\Repository\CategoryRepository")
+ * @ORM\Entity(repositoryClass="CSCI242\NewsBundle\Repository\ArticleRepository")
  * @Vich\Uploadable
- *  */
+ */
 
-class Article {
+class Article 
+{
     /**
      *@var int
      * @ORM\Column(name="id",type="integer")
      * @ORM\Id
-     * @ORM\GenerateValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
      *
      * @var File
-     * @Vich\UploadableField(mapping="article-image",fileNameProperty="image_name")
+     * @Vich\UploadableField(mapping="image",fileNameProperty="image_name", size="imageSize")
      */
     private $imageFile;
     /**
@@ -34,7 +36,7 @@ class Article {
     private $imageName;
     /**
      *
-     * @var DateTime
+     * @var \DateTime
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
@@ -50,14 +52,23 @@ class Article {
      * @ORM\Column(name="content",type="text")
      */
     private $content;
+
     /**
      *
      * @var string
-     * @ORM\ManyToOne(targetEntity="Category",inversedBy="articles"
+     * @ORM\ManyToOne(targetEntity="Category",inversedBy="categoryArticles")
      */
     private $category;
 
-/**
+
+    function __construct() {
+        
+        $this->updatedAt = new \DateTime;
+        
+    }
+
+    
+ /**
  * Set the Image
  * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
  * @return \NewsBundle\Entity\Article
@@ -71,6 +82,14 @@ class Article {
         }
         return $this;
     }
+        /**
+     * @return File|null
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+    
   /**
    * Set the Image Name
    * @param string $imageName
@@ -141,4 +160,27 @@ class Article {
     public function getId() {
         return $this->id;
     }
+
+/**
+ * Set updatedAt
+ *
+ * @param \DateTime $updatedAt
+ * @return Post
+ */
+    public function setUpdatedAt($updatedAt){
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+/**
+ * Get updatedAt
+ *
+ * @return \DateTime
+ */
+    public function getUpdatedAt(){
+        return $this->updatedAt;
+    }
+
+
 }

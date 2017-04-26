@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1> {{article.title}} </h1>
+    <h2> {{article.category}} </h2>
+    <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName }}" />
+    <br>
+    <br>
+    <p>{{article.content}}</p>
+{% endblock %}

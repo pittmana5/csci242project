@@ -35,6 +35,9 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes:
+        # other form themes
+        - 'VichUploaderBundle:Form:fields.html.twig'
 
 # Doctrine Configuration
 doctrine:
@@ -68,6 +71,10 @@ swiftmailer:
 #Vich Uploader Bundle
 vich_uploader:
     db_driver: orm
+    mappings:
+        image:
+            uri_prefix:         /images/
+            upload_destination: '%kernel.root_dir%/../web/images/'
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'

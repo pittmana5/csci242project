@@ -13,8 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Category
 {
     /**
-     * @var int
-     *
+     *@var int
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -31,7 +30,7 @@ class Category
     /**
      * @var array
      *
-     * @ORM\Column(name="categoryArticles", type="string")
+     * @ORM\OneToMany(targetEntity="Article", mappedBy="category")
      */
     private $categoryArticles;
 
@@ -74,10 +73,11 @@ class Category
      *
      * @param array $categoryArticles
      * @return Category
+     * 
      */
-    public function setCategoryArticles($categoryArticles)
+    public function setCategoryArticles($categoryArticle)
     {
-        $this->categoryArticles = $categoryArticles;
+        $this->categoryArticles[] = $categoryArticle;
 
         return $this;
     }
@@ -90,5 +90,10 @@ class Category
     public function getCategoryArticles()
     {
         return $this->categoryArticles;
+    }
+    
+    public function __toString() 
+    {
+        return $this->categoryName;
     }
 }
