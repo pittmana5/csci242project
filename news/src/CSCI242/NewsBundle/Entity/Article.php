@@ -25,7 +25,7 @@ class Article
     /**
      *
      * @var File
-     * @Vich\UploadableField(mapping="article-image",fileNameProperty="image_name")
+     * @Vich\UploadableField(mapping="image",fileNameProperty="image_name", size="imageSize")
      */
     private $imageFile;
     /**
@@ -36,7 +36,7 @@ class Article
     private $imageName;
     /**
      *
-     * @var DateTime
+     * @var \DateTime
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
@@ -73,6 +73,14 @@ class Article
         }
         return $this;
     }
+        /**
+     * @return File|null
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+    
   /**
    * Set the Image Name
    * @param string $imageName
