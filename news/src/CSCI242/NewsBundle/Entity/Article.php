@@ -6,18 +6,20 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
-Article
+ * Article
+ * 
  * @ORM\Table(name="article")
- * @ORM\Entity(repositoryClass="CSCI242\NewsBundle\Repository\CategoryRepository")
+ * @ORM\Entity(repositoryClass="CSCI242\NewsBundle\Repository\ArticleRepository")
  * @Vich\Uploadable
- *  */
+ */
 
-class Article {
+class Article 
+{
     /**
      *@var int
      * @ORM\Column(name="id",type="integer")
      * @ORM\Id
-     * @ORM\GenerateValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
@@ -53,7 +55,7 @@ class Article {
     /**
      *
      * @var string
-     * @ORM\ManyToOne(targetEntity="Category",inversedBy="articles"
+     * @ORM\ManyToOne(targetEntity="Category",inversedBy="articles")
      */
     private $category;
 
