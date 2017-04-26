@@ -55,11 +55,19 @@ class Article
     /**
      *
      * @var string
-     * @ORM\ManyToOne(targetEntity="Category",inversedBy="articles")
+     * @ORM\ManyToOne(targetEntity="Category",inversedBy="categoryArticles")
      */
     private $category;
 
-/**
+
+    function __construct() {
+        
+        $this->updatedAt = new \DateTime;
+        
+    }
+
+    
+ /**
  * Set the Image
  * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
  * @return \NewsBundle\Entity\Article
@@ -140,6 +148,7 @@ class Article
  * Sets the Categories
  * @param string $category
  * @return Article
+ * 
  */
     public function setCategory($category) {
         $this->category = $category;
@@ -151,4 +160,26 @@ class Article
     public function getId() {
         return $this->id;
     }
+/**
+ * Set updatedAt
+ *
+ * @param \DateTime $updatedAt
+ * @return Post
+ */
+    public function setUpdatedAt($updatedAt){
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+/**
+ * Get updatedAt
+ *
+ * @return \DateTime
+ */
+    public function getUpdatedAt(){
+        return $this->updatedAt;
+    }
+
+
 }
