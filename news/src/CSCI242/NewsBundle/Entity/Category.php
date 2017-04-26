@@ -90,4 +90,9 @@ class Category
     {
         return $this->categoryArticles;
     }
+    
+    public function __toString() 
+    {
+        return $this->categoryName;
+    }
 }
