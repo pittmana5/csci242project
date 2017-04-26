@@ -65,3 +65,7 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+#Vich Uploader Bundle
+vich_uploader:
+    db_driver: orm
+    
