@@ -2,7 +2,6 @@
 
 {% block body %}
 
-    <h1>Welcome to our Open Source News!</h1>
     <h2>Recent News!</h2>
         {% for article in recentArticles %}
             <h3><a href="{{ path('default_article_show', { 'id': article.id }) }}">{{article.title}}</a></h3>
@@ -11,6 +10,6 @@
         {% endfor %}
     <h2>Browse Our Articles</h2>
     {% for category in categories %}
-        <h3><a href="">{{category.categoryName}}</a>{{category.categoryName}}</h3>
+        <h3><a href="{{ path('admin_category_show' , {'id':category.id}) }}">{{category.categoryName}}</a></h3>
     {% endfor %}
 {% endblock %}
