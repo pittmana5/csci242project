@@ -75,4 +75,9 @@ vich_uploader:
         image:
             uri_prefix:         /images/
             upload_destination: '%kernel.root_dir%/../web/images/'
-    
+#Assetic Bundle
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~

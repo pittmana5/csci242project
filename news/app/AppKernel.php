@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new CSCI242\NewsBundle\CSCI242NewsBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

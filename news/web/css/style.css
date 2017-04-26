@@ -1,0 +1,58 @@
+body {
+    background-color: white;
+    margin:auto;
+}
+/* Typhography */
+h1,h2 {
+    margin:auto;
+    font-size: 18pt;
+    font-family: sans-serif;
+}
+p {
+    font-size: 12pt;
+    font-family: sans-serif;
+    padding: 2px;
+    margin:auto;
+}
+/*End of Typhography */
+/*li and ul styles */
+ul {
+    text-decoration: none;
+}
+li {
+    text-decoration: none;
+    margin: auto;
+}
+a:hover {
+    text-decoration: none;
+    margin:auto;
+}
+/*end of li styles */
+/* Table Styles */
+table{
+    margin:auto;
+    border: 1px solid black;
+}
+th {
+    font-size: 14pt;
+    text-align: left;
+    color: #000;
+}
+td {
+   font-size: 12pt;
+   text-align: left;
+}
+tr:hover {
+    background-color: #AAA;
+}
+th,td {
+    padding: 5px;
+}
+/* End of Table Styles */
+/* Image Styles */
+img {
+    display:block;
+    margin: auto;
+    padding: auto;
+}
+/*End of Image Styles */
