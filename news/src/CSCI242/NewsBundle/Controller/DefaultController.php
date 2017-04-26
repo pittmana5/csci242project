@@ -14,7 +14,14 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('CSCI242NewsBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        
+        $recentArticles = $em->getRepository('CSCI242\NewsBundle\Entity\Article')->findBy(array(), array('updatedAt' => 'DESC'), 3);
+        $categories = $em->getRepository('CSCI242\NewsBundle\Entity\Category');
+        return $this->render('default/index.html.twig', array(
+            'recentArticles' => $recentArticles,
+            'categories'=> $categories
+        ));
     }
     /**
      * Lists all category entities.
