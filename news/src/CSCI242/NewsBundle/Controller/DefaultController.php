@@ -40,7 +40,13 @@ class DefaultController extends Controller
             'categories' => $categories,
         ));
     }
-    
+    /**
+     * @Route("/about", name="default_about")
+     */
+    public function aboutAction()
+    {
+        return $this->render('default/about.html.twig');
+    }
     
     
     /**
