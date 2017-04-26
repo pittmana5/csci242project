@@ -13,12 +13,14 @@
                 <th>Categoryname</th>
                 <td>{{ category.categoryName }}</td>
             </tr>
-            <tr>
-                <th>Categoryarticles</th>
-                <td>{{ category.categoryArticles }}</td>
-            </tr>
         </tbody>
     </table>
+
+{% for article in category.categoryArticles %}
+    <li><a href="{{ path('default_article_show', { 'id': article.id }) }}">{{article.title}}</a></li>
+{% endfor %}
+
+
 
     <ul>
         <li>
