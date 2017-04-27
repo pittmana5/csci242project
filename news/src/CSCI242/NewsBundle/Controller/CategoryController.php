@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
         $categories = $em->getRepository('CSCI242NewsBundle:Category')->findAll();
 
-        return $this->render('category/index.html.twig', array(
+        return $this->render('category/admin.index.html.twig', array(
             'categories' => $categories,
         ));
     }
@@ -68,7 +68,7 @@ class CategoryController extends Controller
     {
         $deleteForm = $this->createDeleteForm($category);
 
-        return $this->render('category/show.html.twig', array(
+        return $this->render('category/admin.show.html.twig', array(
             'category' => $category,
             'delete_form' => $deleteForm->createView(),
         ));
