@@ -3,6 +3,7 @@
 namespace CSCI242\NewsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Category
@@ -12,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Category
 {
+    
+    function __construct() {
+        $this->categoryArticles = new ArrayCollection();
+    }
+
+    
     /**
      *@var int
      * @ORM\Column(name="id", type="integer")
