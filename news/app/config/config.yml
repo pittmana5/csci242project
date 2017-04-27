@@ -79,7 +79,7 @@ vich_uploader:
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
-    user_class: CSCI242\Entity\UserAccount
+    user_class: CSCI242\NewsBundle\Entity\UserAccount
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"

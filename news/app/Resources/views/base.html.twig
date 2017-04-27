@@ -7,6 +7,13 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <h1>Open Source News</h1>
+        <h2>The world's most flexible news site!</h2>
+        <ul>
+            <li><a href="{{ path('homepage') }}">Home</a></li>
+            <li><a href="{{ path('category_index') }}">Categories</a></li>
+            <li><a href="{{ path('default_about') }}">About OSN</a></li>
+        </ul>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

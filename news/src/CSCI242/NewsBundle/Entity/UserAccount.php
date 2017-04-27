@@ -13,8 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class UserAccount extends BaseUser
 {
-
-    private $id;
+    /**
+     * @ORM\Id @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
+     */
+    protected $id;
     
     public function __construct() {
         parent::__construct();
