@@ -75,6 +75,12 @@ vich_uploader:
         image:
             uri_prefix:         /images/
             upload_destination: '%kernel.root_dir%/../web/images/'
+#Stfalcon Tinymce
+stfalcon_tinymce:
+    include_jquery: true
+    tinymce_jquery: true
+    selector: ".tinymce"
+
 #Assetic Bundle
 assetic:
     debug:          '%kernel.debug%'
