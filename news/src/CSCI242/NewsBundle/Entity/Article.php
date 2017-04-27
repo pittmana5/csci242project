@@ -52,6 +52,7 @@ class Article
      * @ORM\Column(name="content",type="text")
      */
     private $content;
+
     /**
      *
      * @var string
@@ -148,7 +149,6 @@ class Article
  * Sets the Categories
  * @param string $category
  * @return Article
- * 
  */
     public function setCategory($category) {
         $this->category = $category;
@@ -160,6 +160,7 @@ class Article
     public function getId() {
         return $this->id;
     }
+
 /**
  * Set updatedAt
  *
@@ -180,8 +181,7 @@ class Article
     public function getUpdatedAt(){
         return $this->updatedAt;
     }
-    public function __toString() 
-    {
+    public function __toString(){
         return $this->title;
     }
 

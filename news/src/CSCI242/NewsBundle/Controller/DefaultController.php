@@ -40,6 +40,7 @@ class DefaultController extends Controller
             'categories' => $categories,
         ));
     }
+
     /**
      * @Route("/about", name="default_about")
      */
@@ -47,7 +48,6 @@ class DefaultController extends Controller
     {
         return $this->render('default/about.html.twig');
     }
-    
     
     /**
      * Finds and displays a article entity.
