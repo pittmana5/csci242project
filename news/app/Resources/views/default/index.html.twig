@@ -10,6 +10,6 @@
         {% endfor %}
     <h2>Browse Our Articles</h2>
     {% for category in categories %}
-        <h3><a href="{{ path('admin_category_show' , {'id':category.id}) }}">{{category.categoryName}}</a></h3>
+        <h3><a href="{{ path('category_show' , {'id':category.id}) }}">{{category.categoryName}}</a></h3>
     {% endfor %}
 {% endblock %}

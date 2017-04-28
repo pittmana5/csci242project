@@ -18,7 +18,7 @@ class CategoryController extends Controller
     /**
      * Lists all category entities.
      *
-     * @Route("/", name="admin_category_index")
+     * @Route("/", name="category_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -32,36 +32,12 @@ class CategoryController extends Controller
         ));
     }
 
-    /**
-     * Creates a new category entity.
-     *
-     * @Route("/admin/new", name="admin_category_new")
-     * @Method({"GET", "POST"})
-     */
-    public function newAction(Request $request)
-    {
-        $category = new Category();
-        $form = $this->createForm('CSCI242\NewsBundle\Form\CategoryType', $category);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($category);
-            $em->flush();
-
-            return $this->redirectToRoute('admin_category_show', array('id' => $category->getId()));
-        }
-
-        return $this->render('category/new.html.twig', array(
-            'category' => $category,
-            'form' => $form->createView(),
-        ));
-    }
+    
 
     /**
      * Finds and displays a category entity.
      *
-     * @Route("/{id}", name="admin_category_show")
+     * @Route("/{id}", name="category_show")
      * @Method("GET")
      */
     public function showAction(Category $category)
@@ -74,50 +50,9 @@ class CategoryController extends Controller
         ));
     }
 
-    /**
-     * Displays a form to edit an existing category entity.
-     *
-     * @Route("/admin/{id}/edit", name="admin_category_edit")
-     * @Method({"GET", "POST"})
-     */
-    public function editAction(Request $request, Category $category)
-    {
-        $deleteForm = $this->createDeleteForm($category);
-        $editForm = $this->createForm('CSCI242\NewsBundle\Form\CategoryType', $category);
-        $editForm->handleRequest($request);
+    
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('admin_category_edit', array('id' => $category->getId()));
-        }
-
-        return $this->render('category/edit.html.twig', array(
-            'category' => $category,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
-     * Deletes a category entity.
-     *
-     * @Route("/admin/{id}", name="admin_category_delete")
-     * @Method("DELETE")
-     */
-    public function deleteAction(Request $request, Category $category)
-    {
-        $form = $this->createDeleteForm($category);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($category);
-            $em->flush();
-        }
-
-        return $this->redirectToRoute('admin_category_index');
-    }
+    
 
     /**
      * Creates a form to delete a category entity.
