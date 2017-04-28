@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Article controller.
  *
- * @Route("/admin/article")
+ * @Route("/user/article")
  */
 class ArticleController extends Controller
 {
@@ -35,7 +35,7 @@ class ArticleController extends Controller
     /**
      * Creates a new article entity.
      *
-     * @Route("/new", name="article_new")
+     * @Route("/admin/new", name="article_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -77,7 +77,7 @@ class ArticleController extends Controller
     /**
      * Displays a form to edit an existing article entity.
      *
-     * @Route("/{id}/edit", name="article_edit")
+     * @Route("/admin/{id}/edit", name="article_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Article $article)
@@ -102,7 +102,7 @@ class ArticleController extends Controller
     /**
      * Deletes a article entity.
      *
-     * @Route("/{id}", name="article_delete")
+     * @Route("/admin/{id}", name="article_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Article $article)

@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Category controller.
  *
- * @Route("/admin/category")
+ * @Route("/user/category")
  */
 class CategoryController extends Controller
 {
@@ -35,7 +35,7 @@ class CategoryController extends Controller
     /**
      * Creates a new category entity.
      *
-     * @Route("/new", name="admin_category_new")
+     * @Route("/admin/new", name="admin_category_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -77,7 +77,7 @@ class CategoryController extends Controller
     /**
      * Displays a form to edit an existing category entity.
      *
-     * @Route("/{id}/edit", name="admin_category_edit")
+     * @Route("/admin/{id}/edit", name="admin_category_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Category $category)
@@ -102,7 +102,7 @@ class CategoryController extends Controller
     /**
      * Deletes a category entity.
      *
-     * @Route("/{id}", name="admin_category_delete")
+     * @Route("/admin/{id}", name="admin_category_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Category $category)
