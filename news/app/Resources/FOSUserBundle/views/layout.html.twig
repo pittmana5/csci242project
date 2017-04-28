@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <h1>Open Source News</h1>
+        <h2>The world's most flexible news site!</h2>
+        <ul>
+            <li><a href="{{ path('homepage') }}">Home</a></li>
+            <li><a href="{{ path('category_index') }}">Categories</a></li>
+            <li><a href="{{ path('default_about') }}">About OSN</a></li>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li><a href="{{ path('fos_user_security_logout') }}">Log Out</a></li>
+            {% else %}
+                <li><a href="{{ path('fos_user_security_login') }}">Log In</a></li>
+                <li><a href="{{ path('fos_user_registration_register') }}">Register</a></li>
+            {% endif %}
+        </ul>
+
+{% block content %}
+    {% block fos_user_content %}{% endblock %}
+{% endblock %}
