@@ -17,7 +17,7 @@
     </table>
 
 {% for article in category.categoryArticles %}
-    <li><a href="{{ path('default_article_show', { 'id': article.id }) }}">{{article.title}}</a></li>
+    <li><a href="{{ path('article_show', { 'id': article.id }) }}">{{article.title}}</a></li>
 {% endfor %}
 
 
