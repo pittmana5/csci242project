@@ -3,35 +3,71 @@ body {
     margin:auto;
 }
 /* Typhography */
-h1,h2 {
-    margin:auto;
-    font-size: 18pt;
-    font-family: sans-serif;
+h1, h2, h3, h4, p, th, td, tr, ul,li,a {
+  font-family: "Times New Roman", serif;  
+}
+h1 {
+    margin:10px;
+    font-size: 16pt;
+    padding: 2px;
+    text-align: left;
+}
+h2 {
+    font-size: 14pt;
+    padding: 2px;
+    text-align: left;
+    margin: 10px;
+}
+h3 {
+    font-size: 13pt;
+    padding: 2px;
+    margin: 10px;
+    text-align: left;
+}
+h4 {
+    font-size: 13pt;
+    padding: 2px;
+    margin: 10px;
+    text-align: left;  
 }
 p {
     font-size: 12pt;
-    font-family: sans-serif;
-    padding: 2px;
+    padding: 10px;
     margin: auto;
 }
 /*End of Typhography */
 /*li and ul styles */
 ul {
     text-decoration: none;
+    list-style: none;
+    color: #fff;
+    overflow:hidden;
+    background-color: #333;
+    margin: 0px;
+    padding: 0px;
+    font-size: 14pt;
+     
 }
 li {
-    text-decoration: none;
-    margin: auto;
+    float:left;
 }
-a:hover {
+li a {
+    display:block;
     text-decoration: none;
-    margin:auto;
+    text-align: center;
+    color: #fff;
+    padding: 14px 16px;
+}
+
+li a:hover {
+    background-color: #fdfdfd;
+    color: #000;
 }
 /*end of li styles */
 /* Table Styles */
 table {
-    margin:auto;
     border: 1px solid black;
+    padding: 5px;
 }
 th {
     font-size: 14pt;
@@ -42,8 +78,8 @@ td {
    font-size: 12pt;
    text-align: left;
 }
-tr:hover {
-    background-color: #AAA;
+tr {
+    background-color: #f0f0f0;
 }
 th,td {
     padding: 5px;

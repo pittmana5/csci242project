@@ -22,7 +22,7 @@
                 <li><a href="{{ path('fos_user_registration_register') }}">Register</a></li>
             {% endif %}
         </ul>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+
+{% block content %}
+    {% block fos_user_content %}{% endblock %}
+{% endblock %}
